@@ -13,19 +13,8 @@ class ViewController: UIViewController {
     @IBOutlet weak var lblPorcentaje: UILabel!
     @IBOutlet weak var sldPorcentaje: UISlider!
     
-    @IBOutlet weak var txtCuenta: UITextField!
-    
-    @IBOutlet weak var lblTotalConPropina: UILabel!
-    
     @IBAction func doChangePorcentaje(_ sender: Any) {
         lblPorcentaje.text = "\(Int(sldPorcentaje.value))%"
-        if txtCuenta.text != nil && txtCuenta.text != ""{
-            let propina = Float(txtCuenta.text!)! *
-                (sldPorcentaje.value/100)
-                let cuentaTotal = Float(txtCuenta.text!)! + propina
-            let stringCuenta = String(format: "%.2f", cuentaTotal)
-            lblTotalConPropina.text = "$\(stringCuenta)"
-        }
     }
     
     
